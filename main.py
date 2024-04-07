@@ -3,6 +3,7 @@ import os
 
 import weather
 
+
 def initialise_config(path: str) ->dict:
     try:
         with open(path, "r") as f:
@@ -19,5 +20,5 @@ if __name__ == '__main__':
     print(key)
     weather_dict = weather.get_current_weather(url=config['url'], key=key, city="Cluj")
     print(json.dumps(weather_dict, indent=4))
-    city_facts = weather.city_info(url=config['url'], key=key, city="Cluj")
-    print(f"In {city_facts[1]}")
+    city_facts = weather.city_info(url=config['url'], key=key, city="London")
+    print(city_facts)
